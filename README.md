@@ -4,9 +4,9 @@ This mod aims to seamlessly integrate rice  into the game while keeping it very 
 
 Current progress (v 0.0.1):
  - [ ] Items
- - [ ] Blocks
- - [ ] Crafting
+ - [ ] Block
+ - [x] Crafting
  - [ ] Stat balancing
 
-Supported languages: *English*.\
+Supported languages: *English, German*.\
 This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.
