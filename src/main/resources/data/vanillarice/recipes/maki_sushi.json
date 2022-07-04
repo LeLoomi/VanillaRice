@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients":
+	[
+		{ "item": "vanillarice:rice_grain" },
+		{ "item": "minecraft:dried_kelp" },
+		{ "item": "minecraft:salmon" }
+	],
+	"result":
+	{
+		"item": "vanillarice:maki_sushi",
+		"count": 1
+	}
+}

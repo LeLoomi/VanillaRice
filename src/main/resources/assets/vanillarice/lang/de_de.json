@@ -1,0 +1,13 @@
+{
+	"item.vanillarice.rice_seeds": "Reissamen",
+	"item.vanillarice.rice_grain": "Reiskorn",
+	"item.vanillarice.rice_bowl": "Reisschüssel",
+	"item.vanillarice.maki_sushi": "Maki Sushi",
+	"item.vanillarice.fried_rice": "Gebratener Reis",
+	"item.vanillarice.mochi": "Mochi",
+	"item.vanillarice.rice_bag": "Sack voll Reis",
+
+	"itemGroup.vanillarice.ricegroup": "Reis",
+	
+	"langfile_author": "LeLoomi"
+}

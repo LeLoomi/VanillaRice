@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients":
+	[
+		{ "item": "vanillarice:rice_grain" },
+		{ "item": "minecraft:sugar" }
+	],
+	"result":
+	{
+		"item": "vanillarice:mochi",
+		"count": 1
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients":
+	[
+		{ "item": "vanillarice:rice_grain" },
+		{ "item": "minecraft:carrot" },
+		{ "item": "minecraft:bowl" }
+	],
+	"result":
+	{
+		"item": "vanillarice:fried_rice",
+		"count": 1
+	}
+}
