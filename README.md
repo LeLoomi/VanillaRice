@@ -9,5 +9,6 @@ Current progress (v 0.0.1):
  - [x] Crafting
  - [ ] Stat balancing
 
-Supported languages: *English, German*.\
-This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.
+Supported languages: *English, German, French*.\
+This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.\
+To see who contributed to this project outside of GitHub go [here](https://github.com/LeLoomi/VanillaRubies/blob/master/CONTRIBUTORS.md).
