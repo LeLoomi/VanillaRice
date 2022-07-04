@@ -3,7 +3,8 @@
 This mod aims to seamlessly integrate rice  into the game while keeping it very Vanilla.
 
 Current progress (v 0.0.1):
- - [ ] Items
+ - [x] Items (placeholder textures)
+ - [ ] Create actual textures
  - [ ] Block
  - [x] Crafting
  - [ ] Stat balancing
