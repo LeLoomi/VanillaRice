@@ -11,4 +11,4 @@ Current progress (v 0.0.1):
 
 Supported languages: *English, German, French*.\
 This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.\
-To see who contributed to this project outside of GitHub go [here](https://github.com/LeLoomi/VanillaRubies/blob/master/CONTRIBUTORS.md).
+To see who contributed to this project outside of GitHub go [here](https://github.com/LeLoomi/VanillaRice/blob/master/CONTRIBUTORS.md).
