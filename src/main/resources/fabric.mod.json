@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "vanillarice",
+  "version": "${version}",
+
+  "name": "Vanilla Rice",
+  "description": "This mod adds rice in vanilla like fashion!",
+  "authors": [
+    "LeLoomi"
+  ],
+  "contact": {
+    "homepage": "https://github.com/LeLoomi",
+    "sources": "https://github.com/LeLoomi/VanillaRubies"
+  },
+
+  "license": "CC BY-SA 4.0",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.leloomi.vanillarice.VanillaRice"
+    ],
+    "client": [
+      "net.leloomi.vanillarice.VanillaRiceClient"
+    ]
+  },
+  "mixins": [
+    "vanillarice.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
