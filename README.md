@@ -9,4 +9,4 @@ Current progress (v 0.0.1):
  - [ ] Stat balancing
 
 Supported languages: *English*.\
-This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.\
+This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.
