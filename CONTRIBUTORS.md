@@ -1,0 +1,2 @@
+## Content Translation
+Gimly: French
