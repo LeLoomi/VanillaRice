@@ -6,7 +6,7 @@ Current progress (v 0.0.1):
  - [x] Items (placeholder textures)
  - [ ] Create actual textures
  - [x] Food mechanics
- - [ ] Block
+ - [ ] Farming mechanics
  - [x] Crafting
  - [ ] Stat balancing
 
