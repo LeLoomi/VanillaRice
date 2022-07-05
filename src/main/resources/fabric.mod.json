@@ -4,17 +4,17 @@
   "version": "${version}",
 
   "name": "Vanilla Rice",
-  "description": "This mod adds rice in vanilla like fashion!",
+  "description": "This mod adds rice and rice food in vanilla like fashion!",
   "authors": [
     "LeLoomi"
   ],
   "contact": {
     "homepage": "https://github.com/LeLoomi",
-    "sources": "https://github.com/LeLoomi/VanillaRubies"
+    "sources": "https://github.com/LeLoomi/VanillaRice"
   },
 
   "license": "CC BY-SA 4.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/vanillarice/icon.png",
 
   "environment": "*",
   "entrypoints": {
