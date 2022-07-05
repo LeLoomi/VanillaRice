@@ -1,6 +1,7 @@
 package net.leloomi.vanillarice;
 
 import net.fabricmc.api.ModInitializer;
+import net.leloomi.vanillarice.block.ModBlocks;
 import net.leloomi.vanillarice.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,7 @@ public class VanillaRice implements ModInitializer
 	public void onInitialize()
 	{
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 
 		VanillaRice.LOGGER.debug(VanillaRice.MOD_ID + ": Initialization done!");
 	}

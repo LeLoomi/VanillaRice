@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "vanillarice:block/rice_crop0"
+  }
+}

@@ -3,11 +3,11 @@
 This mod aims to seamlessly integrate rice  into the game while keeping it very Vanilla.
 
 Current progress (v 0.0.1):
- - [x] Items (placeholder textures)
- - [x] Create actual textures
+ - [x] Items
+ - [x] Textures
  - [x] Food mechanics
- - [ ] Farming mechanics
- - [x] Crafting
+ - [x] Farming mechanics
+ - [x] Crafting recipes
  - [ ] Stat balancing
 
 Supported languages: *English, German, French*.\

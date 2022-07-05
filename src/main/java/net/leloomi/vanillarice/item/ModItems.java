@@ -2,6 +2,8 @@ package net.leloomi.vanillarice.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.leloomi.vanillarice.VanillaRice;
+import net.leloomi.vanillarice.block.ModBlocks;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -9,7 +11,7 @@ import net.minecraft.util.registry.Registry;
 public class ModItems
 {
     public static final Item RICE_SEEDS = registerItem("rice_seeds",
-            new Item(new FabricItemSettings().group(ModItemGroup.RICE)));
+            new AliasedBlockItem(ModBlocks.RICE_CROP, new FabricItemSettings().group(ModItemGroup.RICE)));
     
     public static final Item RICE_GRAIN = registerItem("rice_grain",
             new Item(new FabricItemSettings().group(ModItemGroup.RICE)));

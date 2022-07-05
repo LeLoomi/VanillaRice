@@ -3,11 +3,12 @@
 	"ingredients":
 	[
 		{ "item": "vanillarice:rice_grain" },
-		{ "item": "minecraft:sugar" }
+		{ "item": "minecraft:sugar" },
+		{ "item": "minecraft:milk_bucket" }
 	],
 	"result":
 	{
 		"item": "vanillarice:mochi",
-		"count": 1
+		"count": 3
 	}
 }
