@@ -1,8 +1,8 @@
 
 # Minecraft *VanillaRice*
-This mod aims to seamlessly integrate rice  into the game while keeping it very Vanilla.
+This mod aims to seamlessly integrate rice  into the game while keeping it very Vanilla. The kickoff idea for this mod can be found [here](https://feedback.minecraft.net/hc/en-us/community/posts/360009727071-Rice). You have food ideas? [DM me!](https://twitter.com/theLeLoomi)
 
-Current progress (v 0.0.1):
+Current progress (v 0.1.0):
  - [x] Items
  - [x] Textures
  - [x] Food mechanics
