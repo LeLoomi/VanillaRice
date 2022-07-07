@@ -1,3 +1,3 @@
 ## Content Translation
-Gimly: French
+Gimly: French\
 Shanba: Spanish
