@@ -11,6 +11,6 @@ Current progress (v 0.1.1):
  - [x] Crafting recipes
  - [x] Stat balancing
 
-Supported languages: *English, German, French*.\
+Supported languages: *English, German, French, Spanish*.\
 This mod is only available for [Minecraft Fabric](https://fabricmc.net/), MC Version 1.19.\
 To see who contributed to this project outside of GitHub go [here](https://github.com/LeLoomi/VanillaRice/blob/master/CONTRIBUTORS.md).
