@@ -15,11 +15,11 @@ public class ModLootTableModifiers
 
     public static void modifyLootTables()
     {
-        //Rice seeds in Bamboo jungle biome
+        //Add rice seeds to loot tables in some biomes
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
 
-            // If the loot table is for the grass block, and it is not overridden by a user:
-            if (Blocks.GRASS.getLootTableId().equals(id) && source.isBuiltin()) {
+            // If the loot table is for the grass block: (and it is not overridden by a user [&& source.isBuiltin()])
+            if (Blocks.GRASS.getLootTableId().equals(id)) {
 
                 //Create a new loot pool that will hold the seeds.
                 LootPool.Builder pool = LootPool.builder()
@@ -28,70 +28,11 @@ public class ModLootTableModifiers
                 .with(ItemEntry.builder(ModItems.RICE_SEEDS.asItem()))
 
                 // ...only if the grass is in the biome.
-                .conditionally(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.BAMBOO_JUNGLE)))
-                        .conditionally(RandomChanceLootCondition.builder(RICESEEDSDROPCHANCE));
-
-                // Add the loot pool to the loot table
-                tableBuilder.pool(pool);
-            }
-        });
-
-        //Rice seeds in River biome
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-
-            // If the loot table is for the grass block, and it is not overridden by a user:
-            if (Blocks.GRASS.getLootTableId().equals(id) && source.isBuiltin()) {
-
-                //Create a new loot pool that will hold the seeds.
-                LootPool.Builder pool = LootPool.builder()
-
-                        // Add rice seeds...
-                        .with(ItemEntry.builder(ModItems.RICE_SEEDS.asItem()))
-
-                        // ...only if the grass is in the biome.
-                        .conditionally(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.RIVER)))
-                        .conditionally(RandomChanceLootCondition.builder(RICESEEDSDROPCHANCE));
-
-                // Add the loot pool to the loot table
-                tableBuilder.pool(pool);
-            }
-        });
-
-        //Rice seeds in Mangroove Swamp
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-
-            // If the loot table is for the grass block, and it is not overridden by a user:
-            if (Blocks.GRASS.getLootTableId().equals(id) && source.isBuiltin()) {
-
-                //Create a new loot pool that will hold the seeds.
-                LootPool.Builder pool = LootPool.builder()
-
-                        // Add rice seeds...
-                        .with(ItemEntry.builder(ModItems.RICE_SEEDS.asItem()))
-
-                        // ...only if the grass is in the biome.
-                        .conditionally(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.MANGROVE_SWAMP)))
-                        .conditionally(RandomChanceLootCondition.builder(RICESEEDSDROPCHANCE));
-
-                // Add the loot pool to the loot table
-                tableBuilder.pool(pool);
-            }
-        });
-
-        //Rice seeds in Swamp
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-
-            // If the loot table is for the grass block, and it is not overridden by a user:
-            if (Blocks.GRASS.getLootTableId().equals(id) && source.isBuiltin()) {
-
-                //Create a new loot pool that will hold the seeds.
-                LootPool.Builder pool = LootPool.builder()
-
-                        // Add rice seeds...
-                        .with(ItemEntry.builder(ModItems.RICE_SEEDS.asItem()))
-
-                        // ...only if the grass is in the biome.
-                        .conditionally(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.SWAMP)))
+                .conditionally(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.BAMBOO_JUNGLE))
+                        .or(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.RIVER)))
+                        .or(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.MANGROVE_SWAMP)))
+                        .or(LocationCheckLootCondition.builder(LocationPredicate.Builder.create().biome(BiomeKeys.SWAMP)))
+                )
                         .conditionally(RandomChanceLootCondition.builder(RICESEEDSDROPCHANCE));
 
                 // Add the loot pool to the loot table
