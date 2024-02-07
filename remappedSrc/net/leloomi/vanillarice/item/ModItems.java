@@ -5,37 +5,36 @@ import net.leloomi.vanillarice.VanillaRice;
 import net.leloomi.vanillarice.block.ModBlocks;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class ModItems
 {
     public static final Item RICE_SEEDS = registerItem("rice_seeds",
-            new AliasedBlockItem(ModBlocks.RICE_CROP, new FabricItemSettings()));
+            new AliasedBlockItem(ModBlocks.RICE_CROP, new FabricItemSettings().group(ModItemGroup.RICE)));
     
     public static final Item RICE_GRAIN = registerItem("rice_grain",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().group(ModItemGroup.RICE)));
 
     public static final Item RICE_BOWL = registerItem("rice_bowl",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().group(ModItemGroup.RICE).food(ModFoodComponents.RICE_BOWL)));
 
     public static final Item MAKI_SUSHI = registerItem("maki_sushi",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().group(ModItemGroup.RICE).food(ModFoodComponents.MAKI_SUSHI)));
 
     public static final Item FRIED_RICE = registerItem("fried_rice",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().group(ModItemGroup.RICE).food(ModFoodComponents.FRIED_RICE)));
 
     public static final Item MOCHI = registerItem("mochi",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().group(ModItemGroup.RICE).food(ModFoodComponents.MOCHI)));
 
     public static final Item RICE_BAG = registerItem("rice_bag",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().group(ModItemGroup.RICE)));
 
 
     private static Item registerItem(String name, Item item)
     {
-        return Registry.register(Registries.ITEM, new Identifier(VanillaRice.MOD_ID, name), item);
+        return Registry.register(Registry.ITEM, new Identifier(VanillaRice.MOD_ID, name), item);
     }
 
     public static void registerModItems()
