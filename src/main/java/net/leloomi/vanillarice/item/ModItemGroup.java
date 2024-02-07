@@ -16,7 +16,7 @@ public class ModItemGroup
             new Identifier(VanillaRice.MOD_ID, "rice"),
             FabricItemGroup.builder()
                     .displayName(Text.translatable("itemGroup.vanillarice"))
-                    .icon( () -> new ItemStack(ModItems.RICE_BOWL))
+                    .icon( () -> new ItemStack(ModItems.FRIED_RICE))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.RICE_SEEDS);
                         entries.add(ModItems.RICE_GRAIN);
