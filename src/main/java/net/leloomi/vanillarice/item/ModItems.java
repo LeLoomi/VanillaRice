@@ -18,16 +18,16 @@ public class ModItems
             new Item(new FabricItemSettings()));
 
     public static final Item RICE_BOWL = registerItem("rice_bowl",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(ModFoodComponents.RICE_BOWL)));
 
     public static final Item MAKI_SUSHI = registerItem("maki_sushi",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(ModFoodComponents.MAKI_SUSHI)));
 
     public static final Item FRIED_RICE = registerItem("fried_rice",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(ModFoodComponents.FRIED_RICE)));
 
     public static final Item MOCHI = registerItem("mochi",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().food(ModFoodComponents.MOCHI)));
 
     public static final Item RICE_BAG = registerItem("rice_bag",
             new Item(new FabricItemSettings()));
