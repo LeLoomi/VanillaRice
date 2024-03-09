@@ -14,5 +14,6 @@ public class ModFoodComponents
             .build();
     public static final FoodComponent MOCHI = (new FoodComponent.Builder()).hunger(2).saturationModifier(0.3F)
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60), 1f)
+            .alwaysEdible()
             .build();
 }

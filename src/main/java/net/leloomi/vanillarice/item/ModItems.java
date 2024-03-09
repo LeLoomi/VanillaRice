@@ -5,6 +5,7 @@ import net.leloomi.vanillarice.VanillaRice;
 import net.leloomi.vanillarice.block.ModBlocks;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.StewItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -18,13 +19,13 @@ public class ModItems
             new Item(new FabricItemSettings()));
 
     public static final Item RICE_BOWL = registerItem("rice_bowl",
-            new Item(new FabricItemSettings().food(ModFoodComponents.RICE_BOWL)));
+            new StewItem(new FabricItemSettings().food(ModFoodComponents.RICE_BOWL)));
 
     public static final Item MAKI_SUSHI = registerItem("maki_sushi",
             new Item(new FabricItemSettings().food(ModFoodComponents.MAKI_SUSHI)));
 
     public static final Item FRIED_RICE = registerItem("fried_rice",
-            new Item(new FabricItemSettings().food(ModFoodComponents.FRIED_RICE)));
+            new StewItem(new FabricItemSettings().food(ModFoodComponents.FRIED_RICE)));
 
     public static final Item MOCHI = registerItem("mochi",
             new Item(new FabricItemSettings().food(ModFoodComponents.MOCHI)));
