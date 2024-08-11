@@ -15,7 +15,7 @@
 	},	
 	"result":
 	{
-		"item": "vanillarice:rice_bag",
+		"id": "vanillarice:rice_bag",
 		"count": 1
 	}
 }

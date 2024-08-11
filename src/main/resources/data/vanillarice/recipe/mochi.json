@@ -3,12 +3,12 @@
 	"ingredients":
 	[
 		{ "item": "vanillarice:rice_grain" },
-		{ "item": "minecraft:carrot" },
-		{ "item": "minecraft:bowl" }
+		{ "item": "minecraft:sugar" },
+		{ "item": "minecraft:milk_bucket" }
 	],
 	"result":
 	{
-		"item": "vanillarice:fried_rice",
-		"count": 1
+		"id": "vanillarice:mochi",
+		"count": 3
 	}
 }
