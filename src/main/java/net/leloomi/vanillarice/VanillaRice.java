@@ -2,7 +2,7 @@ package net.leloomi.vanillarice;
 
 import net.fabricmc.api.ModInitializer;
 import net.leloomi.vanillarice.block.ModBlocks;
-import net.leloomi.vanillarice.item.ModItemGroup;
+import net.leloomi.vanillarice.item.ModItemGrouper;
 import net.leloomi.vanillarice.item.ModItems;
 import net.leloomi.vanillarice.util.ModLootTableModifiers;
 import net.leloomi.vanillarice.util.RiceTrades;
@@ -20,7 +20,7 @@ public class VanillaRice implements ModInitializer
 	{
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ModItemGroup.registerItemGroups();
+		ModItemGrouper.registerItemGroups();
 
 		ModLootTableModifiers.modifyLootTables();
 		RiceTrades.registerRiceTrades();
