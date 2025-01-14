@@ -1,3 +1,4 @@
 ## Content Translation
 Gimly: French\
-Shanba: Spanish
+Shanba: Spanish\
+[NuruddinPlays](https://github.com/NuruddinPlays): Malawi, Jawi
