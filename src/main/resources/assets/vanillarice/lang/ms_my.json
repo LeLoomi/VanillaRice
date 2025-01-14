@@ -1,0 +1,15 @@
+{
+	"item.vanillarice.rice_seeds": "Benih Beras",
+	"item.vanillarice.rice_grain": "Beras",
+	"item.vanillarice.rice_bowl": "Mangkuk Nasi",
+	"item.vanillarice.maki_sushi": "Maki Sushi",
+	"item.vanillarice.fried_rice": "Nasi Goreng",
+	"item.vanillarice.mochi": "Mochi",
+	"item.vanillarice.rice_bag": "Guni Beras",
+
+	"item.vanillarice.rice_crop": "Tanaman Beras",
+
+	"itemGroup.vanillarice": "Beras & Nasi",
+	
+	"langfile_author": "NuruddinPlays"
+}
