@@ -2,40 +2,31 @@ package net.leloomi.vanillarice.block;
 
 import net.leloomi.vanillarice.VanillaRice;
 import net.leloomi.vanillarice.block.custom.RiceCropBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.block.*;
+import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import java.util.function.Function;
 
-public class ModBlocks
+public final class ModBlocks
 {
-    public static final Block RICE_CROP = registerBlockPure("rice_crop",
-            new RiceCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque()));
+    public static final Block RICE_CROP = register(
+            "rice_crop",
+            RiceCropBlock::new,
+            Block.Settings.copy(Blocks.WHEAT).nonOpaque()
+    );
 
-    public static Block registerBlockPure(String name, Block block)
-    {
-        Identifier id = Identifier.of(VanillaRice.MOD_ID, name);
-        return Registry.register(Registries.BLOCK, id, block);
+    private static Block register(String path, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        final Identifier identifier = Identifier.of(VanillaRice.MOD_ID, path);
+        final RegistryKey<Block> registryKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
+
+        final Block block = Blocks.register(registryKey, factory, settings);
+        Items.register(block);
+        return block;
     }
 
-    public static Block registerBlock(String name, Block block)
-    {
-        registerBlockItem(name, block);
-        return registerBlockPure(name, block);
-    }
-
-    private static Item registerBlockItem(String name, Block block)
-    {
-        Identifier id = Identifier.of(VanillaRice.MOD_ID, name);
-        BlockItem blockItem = new BlockItem(block, new Item.Settings());
-        return Registry.register(Registries.ITEM, id, blockItem);
-    }
-
-        public static void registerModBlocks()
+    public static void initialize()
     {
         VanillaRice.LOGGER.debug(VanillaRice.MOD_ID + ": Registering blocks...");
     }

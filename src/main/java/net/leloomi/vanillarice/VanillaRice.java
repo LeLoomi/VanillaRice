@@ -13,13 +13,12 @@ public class VanillaRice implements ModInitializer
 {
 	public static final String MOD_ID = "vanillarice";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-
+	
 	@Override
 	public void onInitialize()
 	{
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+		ModItems.initialize();
+		ModBlocks.initialize();
 		ModItemGrouper.registerItemGroups();
 
 		ModLootTableModifiers.modifyLootTables();

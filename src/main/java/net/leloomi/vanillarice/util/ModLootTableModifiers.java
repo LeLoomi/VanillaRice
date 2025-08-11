@@ -21,13 +21,13 @@ public class ModLootTableModifiers
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
 
             // to retrieve the biomes, made necessary by 1.21
-            RegistryWrapper.Impl<Biome> impl = registries.getWrapperOrThrow(RegistryKeys.BIOME);
+            RegistryWrapper.Impl<Biome> impl = registries.getOrThrow(RegistryKeys.BIOME);
 
             // If the loot table is for the short / big grass block, and it is not overridden by a user:
             if (
                     source.isBuiltin() && (
-                            Blocks.SHORT_GRASS.getLootTableKey() == key ||
-                                    Blocks.TALL_GRASS.getLootTableKey() == key
+                            Blocks.SHORT_GRASS.getLootTableKey().get() == key ||
+                                    Blocks.TALL_GRASS.getLootTableKey().get() == key
                             )
 
             ) {
