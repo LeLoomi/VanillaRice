@@ -123,11 +123,11 @@ public class RiceCropBlock extends CropBlock implements Waterloggable
     // We grow at full speed (7.0) if all conditions are met, else we don't grow at all (0.0).
     // CARE: vanilla blocks never return 0.0f as it breaks randomTick(...). We handle it here, but if another
     // mod would get that property for some off reason, this might lead to a bug
-    // TODO check if Block below is really dirt or mud.
     protected static float getAvailableMoisture(Block block, BlockView world, BlockPos pos) {
-        // conditions are: generally waterlogged, and also waterlogged by water
-        // -> is first a part of second? idk let's be safe
+        // conditions are: generally waterlogged, planted on dirt/mud, and also specifically waterlogged with water
+        // -> is waterlogged a duplication of isIn(water)? I don't know, let's be safe
         if (block.getStateWithProperties(world.getBlockState(pos)).get(WATERLOGGED, Boolean.FALSE)
+                && (world.getBlockState(pos.down()).isOf(Blocks.DIRT) || world.getBlockState(pos.down()).isOf(Blocks.MUD))
                 && world.getFluidState(pos).isIn(FluidTags.WATER)
         )
                 return 7.0f;
