@@ -1,4 +1,3 @@
-// see https://fabricmc.net/wiki/tutorial:waterloggable
 package net.leloomi.vanillarice.block.custom;
 
 import net.leloomi.vanillarice.item.ModItems;
@@ -8,6 +7,8 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.registry.tag.FluidTags;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -20,6 +21,7 @@ import net.minecraft.world.tick.ScheduledTickView;
 
 public class RiceCropBlock extends CropBlock implements Waterloggable
 {
+    public static final int MAX_AGE = 7;
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     public RiceCropBlock(Settings settings) {
@@ -34,8 +36,16 @@ public class RiceCropBlock extends CropBlock implements Waterloggable
         return ModItems.RICE_SEEDS;
     }
 
+    // our block is through-walkable and so pathfinding at all times
+    @Override
+    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
+        return true;
+    }
 
-    // +++ Water logging stuff +++
+    @Override
+    public int getMaxAge() {
+        return MAX_AGE;
+    }
 
     // Make the block recognize the property, otherwise setting the property will throw exceptions.
     @Override
@@ -67,7 +77,7 @@ public class RiceCropBlock extends CropBlock implements Waterloggable
                 .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER));
     }
 
-    // display crop with water in it when waterlogged
+    // display crop with water in it, when waterlogged
     @Override
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
@@ -83,7 +93,7 @@ public class RiceCropBlock extends CropBlock implements Waterloggable
         return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
-    // handle what happens if the crop grows
+    // handle what happens if the crop grows (aka preserve water source block)
     @Override
     public BlockState withAge(int age) {
         return (BlockState)this.getDefaultState()
@@ -91,7 +101,37 @@ public class RiceCropBlock extends CropBlock implements Waterloggable
                 .with(WATERLOGGED, WATERLOGGED.getValues().get(0)); //append current waterlogged state to state applied after growth
     }
 
-    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
-        return true;
+    // We override here only to lower light level (by 1) to 8 and also handle if moisture is 0.0f
+    // Just a QOL thing for players I guess
+    @Override
+    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (getAvailableMoisture(this, world, pos) == 0.0f)
+            return;
+
+        if (world.getBaseLightLevel(pos, 0) >= 8) {
+            int i = this.getAge(state);
+            if (i < this.getMaxAge()) {
+                float f = getAvailableMoisture(this, world, pos);
+                if (random.nextInt((int)(25.0F / f) + 1) == 0) {
+                    world.setBlockState(pos, this.withAge(i + 1), 2);
+                }
+            }
+        }
+    }
+
+    // "Override" how crop calculates moisture.
+    // We grow at full speed (7.0) if all conditions are met, else we don't grow at all (0.0).
+    // CARE: vanilla blocks never return 0.0f as it breaks randomTick(...). We handle it here, but if another
+    // mod would get that property for some off reason, this might lead to a bug
+    // TODO check if Block below is really dirt or mud.
+    protected static float getAvailableMoisture(Block block, BlockView world, BlockPos pos) {
+        // conditions are: generally waterlogged, and also waterlogged by water
+        // -> is first a part of second? idk let's be safe
+        if (block.getStateWithProperties(world.getBlockState(pos)).get(WATERLOGGED, Boolean.FALSE)
+                && world.getFluidState(pos).isIn(FluidTags.WATER)
+        )
+                return 7.0f;
+        else
+            return 0.0f;
     }
 }
