@@ -3,6 +3,7 @@ package net.leloomi.vanillarice.block.custom;
 
 import net.leloomi.vanillarice.item.ModItems;
 import net.minecraft.block.*;
+import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemConvertible;
@@ -80,5 +81,17 @@ public class RiceCropBlock extends CropBlock implements Waterloggable
         }
 
         return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
+    }
+
+    // handle what happens if the crop grows
+    @Override
+    public BlockState withAge(int age) {
+        return (BlockState)this.getDefaultState()
+                .with(this.getAgeProperty(), age)
+                .with(WATERLOGGED, WATERLOGGED.getValues().get(0)); //append current waterlogged state to state applied after growth
+    }
+
+    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
+        return true;
     }
 }
