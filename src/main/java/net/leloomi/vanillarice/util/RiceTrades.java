@@ -5,6 +5,7 @@ import net.leloomi.vanillarice.item.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradeOffers;
 import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
 
@@ -42,16 +43,17 @@ public class RiceTrades {
 
         // WANDERING TRADER (Seeds only)
         TradeOfferHelper.registerWanderingTraderOffers(
-                1,
-                factories -> {
-                    factories.add((entity, random) -> new TradeOffer(
-                            new TradedItem(Items.EMERALD, 1),
-                            new ItemStack(ModItems.RICE_SEEDS, 1),
+                factories -> factories.addOffersToPool(
+                        TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
+                        new TradeOffers.SellItemFactory(
+                            ModItems.RICE_SEEDS,
+                            1,
+                            1,
                             12,
                             5,
                             0.05f
-                    ));
-                }
+                    )
+                )
         );
     }
 }
